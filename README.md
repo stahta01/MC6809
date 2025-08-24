@@ -1,10 +1,10 @@
-# MC6809
+# mc6809
 
-![MC6809](./docs/MC6809P.jpg)
+![mc6809](./docs/MC6809P.jpg)
 
 ## Introduction
 
-A library written in C++ that emulates the MC6809 cpu. The enclosed ```CMakeLists.txt``` file (standard cmake procedure) will build the library and a small test application. To use this library in your project, copy the five source files from ```./src/``` into your source tree.
+A library written in C++ that emulates the mc6809 cpu. The enclosed ```CMakeLists.txt``` file (standard cmake procedure) will build the library and a small test application. To use this library in your project, copy the five source files from ```./src/``` into your source tree.
 
 At this very moment, the following is not yet implemented:
 * CWAI opcode
@@ -60,7 +60,7 @@ Running more that one instruction or the ability to run ```N``` cycles has been 
 
 ## Links
 
-* [E64](https://github.com/elmerucr/E64) - A virtual computer system inspired by the Commodore 64 using an MC6809 cpu and implementing some Amiga 500 and Atari ST technology.
+* [E64](https://github.com/elmerucr/E64) - A virtual computer system inspired by the Commodore 64 using an mc6809 cpu and implementing some Amiga 500 and Atari ST technology.
 * [lib65ce02](https://github.com/elmerucr/lib65ce02) - CSG65CE02 emulator written in C.
 * [Moira](https://github.com/dirkwhoffmann/Moira) - Motorola 68000 cpu emulator written in C++ by Dirk W. Hoffmann.
 * [vAmiga](https://dirkwhoffmann.github.io/vAmiga/) - An Amiga 500, 1000, or 2000 on your Apple Macintosh by Dirk W. Hoffmann.

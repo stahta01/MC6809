@@ -1,5 +1,5 @@
 /*
- * main.cpp  -  part of MC6809
+ * main.cpp  -  part of mc6809
  *
  * (c)2021-2024 elmerucr
  */

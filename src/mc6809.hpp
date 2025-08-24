@@ -1,5 +1,5 @@
 /*
- * mc6809.hpp  -  part of MC6809
+ * mc6809.hpp  -  part of mc6809
  *
  * (C)2021-2025 elmerucr
  */
