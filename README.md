@@ -40,7 +40,7 @@ void mc6809::assign_firq_line(bool *line)
 void mc6809::assign_irq_line(bool *line)
 ```
 
-These functions take a pointer to a boolean value (the actual line/value that represent interrupt states from the connected devices). If more devices are to be connected to one line, this must be separately programmed (see [E64](https://github.com/elmerucr/E64) source code for an example, ```exceptions_ic``` class).
+These functions take a pointer to a boolean value (the actual line/value that represent interrupt states from the connected devices). If more devices are to be connected to one line, this must be separately programmed (see [lime](https://github.com/elmerucr/lime) source code for an example, ```exceptions_ic``` class).
 
 ### Reset
 
@@ -60,8 +60,7 @@ Running more that one instruction or the ability to run ```N``` cycles has been 
 
 ## Links
 
-* [E64](https://github.com/elmerucr/E64) - A virtual computer system inspired by the Commodore 64 using an mc6809 cpu and implementing some Amiga 500 and Atari ST technology.
-* [lib65ce02](https://github.com/elmerucr/lib65ce02) - CSG65CE02 emulator written in C.
+* [lime](https://github.com/elmerucr/lime) - A virtual computer system that draws inspiration from computing platforms such as the Commodore 64, the Atari ST and the Nintendo Gameboy.
 * [Moira](https://github.com/dirkwhoffmann/Moira) - Motorola 68000 cpu emulator written in C++ by Dirk W. Hoffmann.
 * [vAmiga](https://dirkwhoffmann.github.io/vAmiga/) - An Amiga 500, 1000, or 2000 on your Apple Macintosh by Dirk W. Hoffmann.
 * [vasm](http://sun.hasenbraten.de/vasm/) - A portable and retargetable assembler.
