@@ -6,9 +6,19 @@
 
 A library written in C++ that emulates the mc6809 cpu. The enclosed ```CMakeLists.txt``` file (standard cmake procedure) will build the library and a small test application. To use this library in your project, copy the five source files from ```./src/``` into your source tree.
 
-At this very moment, the following is not yet implemented:
+The following instruction is not yet implemented:
 * CWAI opcode
+
+To be implemented (with a switch in the source code), a feature from the Hitachi 6309:
 * illegal opcode exceptions (vector at $fff0)
+
+At this point it's unclear to me how many cycles the NMI, FIRQ and IRQ exceptions consume. I made a guess for 19, 10 and 19 cycles respectively.
+
+To reduce the CPU load on the host system when the the 6809 cpu is idle (after a SYNC or CWAI instruction), this status consumes 50 cycles. Feel free to change following lines in ```mc6809.hpp```:
+```cpp
+#define SYNC_CYCLES	50
+#define CWAI_CYCLES	50
+```
 
 ## API
 
@@ -40,7 +50,7 @@ void mc6809::assign_firq_line(bool *line)
 void mc6809::assign_irq_line(bool *line)
 ```
 
-These functions take a pointer to a boolean value (the actual line/value that represent interrupt states from the connected devices). If more devices are to be connected to one line, this must be separately programmed (see [lime](https://github.com/elmerucr/lime) source code for an example, ```exceptions_ic``` class).
+These functions take a pointer to a boolean value (the actual line/value that represent interrupt states from the connected devices). If more devices are to be connected to one line, this must be separately programmed (see ```exceptions_ic``` class in [lime](https://github.com/elmerucr/lime) source code for an example).
 
 ### Reset
 
@@ -63,10 +73,10 @@ Running more that one instruction or the ability to run ```N``` cycles has been 
 * [lime](https://github.com/elmerucr/lime) - A virtual computer system that draws inspiration from computing platforms such as the Commodore 64, the Atari ST and the Nintendo Gameboy.
 * [Moira](https://github.com/dirkwhoffmann/Moira) - Motorola 68000 cpu emulator written in C++ by Dirk W. Hoffmann.
 * [vAmiga](https://dirkwhoffmann.github.io/vAmiga/) - An Amiga 500, 1000, or 2000 on your Apple Macintosh by Dirk W. Hoffmann.
-* [vasm](http://sun.hasenbraten.de/vasm/) - A portable and retargetable assembler.
+* [vasm](http://sun.hasenbraten.de/vasm/) - A portable and retargetable assembler by Volker Barthelmann.
 * [VICE](http://vice-emu.sourceforge.net) - The Versatile Commodore Emulator.
 * [VirtualC64](https://dirkwhoffmann.github.io/virtualc64/) - A Commodore 64 on your Apple Macintosh by Dirk W. Hoffmann.
-* [vlink](http://sun.hasenbraten.de/vlink/) - A portable linker for multiple file formats.
+* [vlink](http://sun.hasenbraten.de/vlink/) - A versatile linker by Frank Wille.
 
 ## References
 

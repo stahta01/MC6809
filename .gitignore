@@ -1,4 +1,5 @@
-build/
+Debug/
+Release/
 .DS_Store
 rom/mk_rom
 rom/rom_unpatched.bin
